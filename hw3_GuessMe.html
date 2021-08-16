@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Guess me</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var request = Number.parseInt(prompt('Укажите число от одного до 10'));
+		var rndInt = Math.floor(Math.random() * 10);
+		var num = 1;
+		while(rndInt != request) {
+			num++;
+			if(rndInt > request) {
+				alert('Загаданное число больше');
+				request = Number.parseInt(prompt('Укажите число от одного до 10'));
+			} else {
+				alert('Загаданное число меньше');
+				request = Number.parseInt(prompt('Укажите число от одного до 10'));
+			} 
+
+		} 
+		alert('Победа! Число попыток: ' + num)
+
+
+	</script>
+	
+</body>
+</html>
