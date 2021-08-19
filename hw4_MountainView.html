@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>hw4</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		const mount =[];
+		var hight;
+		const stolb = "#";
+		const l = '\\';
+		const r = '/';
+		const c ='|';
+		function makeMount(hight) {
+			function growMount(grow) {
+				var growMe ='';
+				for( let i = 0; i < grow; i++){
+					growMe = growMe + '#';
+				}
+				return growMe;
+			}
+
+			function declinMount(declin) {
+				var declinMe = '';
+				while(declin - 2){
+					declinMe = declinMe + '#';
+					declin --;
+				}
+				return declinMe;
+			}
+
+			for (var i = 0; i <= hight * 2; i++) {
+				if (i < hight) {
+					mount[i] = growMount(i) + l;
+				}else if(i == hight) {
+					mount[i] = growMount(i) + c;
+				} else {
+					mount[i] =declinMount(mount[i-1].length) + r}
+			} 
+			return mount;
+		}
+		console.log(makeMount(prompt('Укажи высоту горы')));
+	</script>
+</body>
+</html>
