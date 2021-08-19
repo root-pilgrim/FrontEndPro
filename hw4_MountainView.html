@@ -2,17 +2,13 @@
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
-	<title>hw4</title>
+	<title>Mountain view</title>
 </head>
 <body>
 	<script type="text/javascript">
 
 		const mount =[];
-		var hight;
-		const stolb = "#";
-		const l = '\\';
-		const r = '/';
-		const c ='|';
+
 		function makeMount(hight) {
 			function growMount(grow) {
 				var growMe ='';
@@ -33,15 +29,15 @@
 
 			for (var i = 0; i <= hight * 2; i++) {
 				if (i < hight) {
-					mount[i] = growMount(i) + l;
+					mount[i] = growMount(i) + '╲';
 				}else if(i == hight) {
-					mount[i] = growMount(i) + c;
+					mount[i] = growMount(i) + '|';
 				} else {
-					mount[i] =declinMount(mount[i-1].length) + r}
+					mount[i] =declinMount(mount[i-1].length) + '╱'}
 			} 
 			return mount;
 		}
-		console.log(makeMount(prompt('Укажи высоту горы')));
+		makeMount(prompt('Укажи высоту горы')).forEach(elem => console.log(elem));
 	</script>
 </body>
 </html>
