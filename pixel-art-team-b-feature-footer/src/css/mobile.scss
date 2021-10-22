@@ -178,7 +178,6 @@ a:hover {
     }
 }
 .about {
-    margin-top: 1rem;
     font-size: 0.8rem;
     background-color: $background-color-footer;
     .wrapper {
@@ -209,4 +208,27 @@ a:hover {
     }
 
 }
+.proposition {
+    background-color: $background-color-footer;
+    &__head {
+        text-align: center;
+        h2 {
+            padding: 5% 0 1% 0;
+        }
 
+    }
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        margin: 5% 5% 0 5%;
+        padding-bottom: 5%;
+        p {
+            font-size: 12pt;
+            padding-top: 3%;
+        }
+
+        &__info {  
+
+        }
+    }
+}

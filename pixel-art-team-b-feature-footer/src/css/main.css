@@ -162,7 +162,6 @@ a:hover {
 }
 
 .about {
-  margin-top: 1rem;
   font-size: 0.8rem;
   background-color: #F2F2F2;
 }
@@ -194,6 +193,29 @@ a:hover {
   display: none;
 }
 
+.proposition {
+  background-color: #F2F2F2;
+}
+.proposition__head {
+  text-align: center;
+}
+.proposition__head h2 {
+  padding: 5% 0 1% 0;
+}
+.proposition__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 5% 5% 0 5%;
+  padding-bottom: 5%;
+}
+.proposition__body p {
+  font-size: 12pt;
+  padding-top: 3%;
+}
 @media (min-width: 1024px) {
   .only-desktop {
     display: unset;

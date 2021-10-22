@@ -9,7 +9,7 @@
 
 		const mount =[];
 
-		function makeMount(hight) {
+		function makeMount(mounts, h1, h2) {
 			function growMount(grow) {
 				var growMe ='';
 				for( let i = 0; i < grow; i++){
@@ -27,8 +27,8 @@
 				return declinMe;
 			}
 
-			for (var i = 0; i <= hight * 2; i++) {
-				if (i < hight) {
+			for (var i = h1; i < mounts; i++) {
+				if (i < mounts) {
 					mount[i] = growMount(i) + '\\';
 				}else if(i == hight) {
 					mount[i] = growMount(i) + '|';
@@ -37,7 +37,7 @@
 			} 
 			return mount;
 		}
-		makeMount(prompt('Укажи высоту горы')).forEach(elem => console.log(elem));
+		makeMount(prompt('Укажи высоту горы'), 2, 5).forEach(elem => console.log(elem));
 	</script>
 </body>
 </html>
