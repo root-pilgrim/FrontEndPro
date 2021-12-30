@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="table-creator" action="">
+        <input 
+            type="width" 
+            name="width" 
+            placeholder="Width" 
+            required>
+        <input 
+            type="hight" 
+            name="hight" 
+            placeholder="Hight" 
+            required>
+        <input 
+            type="symbol" 
+            name="symbol" 
+            placeholder="qwerty">
+        <button type="submit">Build table</button>
+    </form>
+</body>
+<script>
+    document.forms['table-creator']
+        .addEventListener('submit', (e) => {
+            const $fields = document.forms['table-creator'].elements;
+
+            const {
+                width: { value: cols },
+                hight: { value: rows },
+                symbol: { value: symbilValue }
+            } = $fields;
+            });
+    if (location.search) {
+        const fields = location.search.slice(1)
+            .split('&')
+            .map((el) =>el.split('='));
+        const $table = document.createElement('div');
+        const cols = fields[0][1];
+        const rows = fields[1][1];
+        const symbol = fields[2][1];
+        
+        createTable($table, cols, rows, symbol);
+        
+    function createTable( parent, cols, rows, symbol ) {
+        var table = document.createElement('table');
+             for ( var i = 0; i < rows; i++ ){
+             var tr = document.createElement('tr');
+             for ( var j = 0; j < cols; j++ ) {
+                var td = document.createElement('td');
+                tr.appendChild(td);
+                var text = document.createTextNode(symbol);
+                td.appendChild(text);
+                tr.appendChild(td);
+            } 
+            table.appendChild(tr);
+       }
+     parent.appendChild(table);
+    }
+        document.forms['table-creator'].after($table);
+    }
+</script>
+<style>
+    table td {
+        padding: 20px;
+        border: 1px solid black;
+    }
+</style>
+</html>
+
