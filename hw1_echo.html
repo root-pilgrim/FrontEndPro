@@ -3,12 +3,24 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Echo</title>
+	<title>How old are you?</title>
 </head>
 <body>
 	<script type="text/javascript">
-		let echo = prompt('And what do you say?');
-		alert(echo + '... ' + echo + '... ' + echo + '... ' );
+		let name = prompt('Как Вас зову?');	
+		let years = prompt('Как Вы года рождения?');
+		let currentYears = 2022 - years;
+		let declension = ['год', 'года', 'лет'];
+		function plural(currentYears, titles) {  
+    		cases = [2, 0, 1, 1, 1, 2];  
+    		return titles[ (currentYears%100>4 && currentYears%100<20)? 2 : cases[(currentYears%10<5)?currentYears%10:5] ];  
+		}
+		if (years > 1920 && years < 2021){
+			alert(name +', Вам ' + currentYears + ' ' + plural(currentYears, declension) + '?');
+		} else {
+			alert(name + ', Вы ввели некоректный год рождения!')
+		}
+		
 	</script>
 	
 </body>
